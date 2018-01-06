@@ -1,0 +1,11 @@
+<h2>Welcome to Northwind Website!</h2>
+
+<!-- Using Structural Directive: -->
+<h3 *ngIf="discount">Only now, at {{currentDate | date:'EEE, MMMM'}} - {{discount}}% discount on all products!</h3>
+
+<h3 *jbSeason="'autumn'">And only at the summer - delicious icecreams!</h3>
+
+<ul>
+    <li *ngFor="let c of categories">{{c.categoryID}} - {{c.categoryName}}</li>
+</ul>
+

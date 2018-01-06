@@ -1,0 +1,9 @@
+h1 {
+    margin: 0;
+}
+
+nav {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+}

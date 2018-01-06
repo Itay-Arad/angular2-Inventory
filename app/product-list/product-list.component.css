@@ -1,0 +1,30 @@
+section {
+    margin: 20px;
+}
+
+table {
+    margin: auto;
+}
+
+td:first-child {
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: lightblue;
+}
+
+tr:nth-child(odd) {
+    background-color: lightgreen;
+}
+
+tr:first-child {
+    background-color: lightgray;
+}
+
+.top-left {
+    position: fixed;
+    top: 120px;
+    left: 20px;
+    width: 150px;
+}

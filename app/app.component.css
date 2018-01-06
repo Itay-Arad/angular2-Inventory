@@ -1,0 +1,26 @@
+#page {
+    padding: 0 0 50px 0;
+    min-height: 100%;    
+    box-sizing: border-box; /* Width will contain padding+border+content, Height will contain padding+border+content */
+    position: relative;
+    text-align: center;
+    border: 2px solid black;
+    background-image: linear-gradient(white, gray);
+}
+
+header {
+    height: 100px;
+    line-height: 100px;
+    border: 0 solid black; /* TODO: check... */ 
+    border-bottom-width: 2px;
+}
+
+footer {
+    height: 50px;
+    line-height: 50px;
+    border: 0 solid black; /* TODO: check... */ 
+    border-top-width: 2px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

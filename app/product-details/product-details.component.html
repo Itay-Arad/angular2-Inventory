@@ -1,0 +1,15 @@
+<section *ngIf="product">
+
+    <h2>{{product.productName}} - {{product.unitPrice}}</h2>
+    <h2>
+        {{product.unitsInStock}} units in stock,
+        {{product.unitsOnOrder}} units on order
+    </h2>
+    <img src="/assets/images/{{product.productID}}.jpg" />
+
+</section>
+
+
+<br/><br/><br/>
+<a href="javascript:void(0)" (click)="goBack()">Back to List</a>
+

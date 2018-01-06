@@ -1,0 +1,47 @@
+<section>
+    <!-- Property Binding (One-Way Binding) -->
+    <table [style.font-size.px]="fontSize" border="1" *ngIf="products?.length; else noProducts">
+        <tr>
+            <th>Product Name</th>
+
+            <!-- Event Binding (One-Way to Source)-->
+            <th (click)="showAveragePrice()">Unit Price</th>
+            <th>Units in Stock</th>
+            <th>Units on Order</th>
+            <th>Image</th>
+            <th>Stock</th>
+        </tr>
+        <tr *ngFor="let p of products" [title]="p.productName">
+            <td>
+                <a routerLink="/products/{{p.productID}}">{{p.productName}}</a>
+            </td>
+            <td>{{p.unitPrice | currency:'ILS':true:'2.2'}}</td>
+            <td>{{p.unitsInStock | zero2Symbol}}</td>
+            <td>{{p.unitsOnOrder | zero2Symbol:'None'}}</td>
+            <td>
+                <!-- 4. רישום לארוע של הרכיב הפנימי -->
+                <!-- showImage ברגע שהוא יתבצע - אנו מפעילים את -->
+                <jb-product-image 
+                    imageSource="/assets/images/{{p.productID}}.jpg"
+                    (onImageClicked)="showImage($event)"></jb-product-image>
+            </td>
+            <td>
+                <jb-stock-in-out 
+                    unitsInStock="{{p.unitsInStock}}"
+                    unitsOnOrder="{{p.unitsOnOrder}}"></jb-stock-in-out>
+            </td>
+        </tr>
+    </table>
+
+    <ng-template #noProducts>
+        <h2>There are no products!</h2>
+    </ng-template>
+
+    <label>Change font size: </label>
+
+    <!-- Two way Binding (Banana in a Box): -->
+    <input type="range" min="10" max="30" [(ngModel)]="fontSize" />
+
+    <img *ngIf="clickedImageSource" class="top-left" [src]="clickedImageSource" />
+
+</section>
